@@ -462,8 +462,35 @@ h1, h2, h3 {
   text-align: center;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .footer p {
   opacity: 0.8;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: #81c784;
 }
 
 /* Animations */
@@ -714,6 +741,15 @@ body.dark-mode .moon-icon {
   .toggle-icon {
     font-size: 1.2rem;
   }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -748,5 +784,11 @@ body.dark-mode .moon-icon {
   
   .toggle-icon {
     font-size: 1rem;
+  }
+  
+  .footer-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

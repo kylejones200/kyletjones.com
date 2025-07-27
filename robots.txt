@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kyletjones.com/sitemap.xml
+
+# Disallow common files that shouldn't be indexed
+Disallow: *.css$
+Disallow: *.js$
+Disallow: /script.js
+Disallow: /style.css
