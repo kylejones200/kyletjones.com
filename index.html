@@ -3,17 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kyle T. Jones</title>
+  <title>Kyle T. Jones - Systems Thinker & Data Strategist</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Kyle T. Jones - Systems thinker, author, and data strategist.">
 </head>
 <body>
-  <main>
-    <h1>Kyle T. Jones</h1>
-    <p>Systems thinker, author, and data strategist.</p>
-    <nav>
-      <a href="https://medium.com/@kyletjones" target="_blank">Writing</a>
-      <a href="mailto:kyle@kyletjones.com">Contact</a>
-    </nav>
-  </main>
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+    <span class="toggle-icon sun-icon">☀️</span>
+    <span class="toggle-icon moon-icon">🌙</span>
+  </button>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-greeting">Hello, I'm</span>
+          <span class="hero-name">Kyle T. Jones</span>
+        </h1>
+        <p class="hero-subtitle">Systems thinker, author, and data strategist</p>
+        <p class="hero-description">
+          I help organizations navigate complexity through strategic thinking, 
+          data-driven insights, and clear communication.
+        </p>
+        <div class="hero-cta">
+          <a href="#about" class="btn btn-primary">Learn More</a>
+          <a href="mailto:kyle@kyletjones.com" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <p class="about-text">
+          I'm passionate about understanding how complex systems work and helping 
+          others navigate them effectively. My work sits at the intersection of 
+          strategic thinking, data analysis, and clear communication.
+        </p>
+        <div class="skills">
+          <div class="skill-item">
+            <h3>Systems Thinking</h3>
+            <p>Understanding interconnections and feedback loops</p>
+          </div>
+          <div class="skill-item">
+            <h3>Data Strategy</h3>
+            <p>Turning information into actionable insights</p>
+          </div>
+          <div class="skill-item">
+            <h3>Strategic Writing</h3>
+            <p>Communicating complex ideas clearly</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Writing Section -->
+  <section class="writing">
+    <div class="container">
+      <h2 class="section-title">Writing</h2>
+      <p class="writing-description">
+        I regularly publish articles exploring the intersection of systems thinking, 
+        data strategy, and organizational effectiveness. I've also authored technical books and open-source Python packages.
+      </p>
+      
+      <div class="writing-grid">
+        <!-- Book -->
+        <div class="writing-item book-item">
+          <div class="book-cover">
+            <div class="book-spine"></div>
+            <div class="book-front">
+              <h4>Hands-On AWS CDK</h4>
+              <p class="book-authors">Sam Ward Biddle & Kyle T. Jones</p>
+              <div class="oreilly-logo">O'REILLY</div>
+            </div>
+          </div>
+          <div class="writing-content">
+            <h3>Hands-On AWS CDK</h3>
+            <p class="writing-meta">Co-authored with Sam Ward Biddle • O'Reilly Media</p>
+            <p>A comprehensive guide to infrastructure as code using AWS Cloud Development Kit.</p>
+            <a href="https://www.oreilly.com/library/view/hands-on-aws-cdk/9781098158767/" target="_blank" class="btn btn-outline">
+              View on O'Reilly →
+            </a>
+          </div>
+        </div>
+        
+        <!-- PyPI Project -->
+        <div class="writing-item">
+          <div class="writing-icon">🐍</div>
+          <div class="writing-content">
+            <h3>real-simple-stats</h3>
+            <p class="writing-meta">Open Source Python Package • PyPI</p>
+            <p>A comprehensive Python implementation of statistics covering basic through advanced topics, written as callable modules for education and quick reference.</p>
+            <div class="project-links">
+              <a href="https://pypi.org/project/real-simple-stats/" target="_blank" class="btn btn-outline">
+                View on PyPI →
+              </a>
+              <a href="https://real-simple-stats.readthedocs.io/en/latest/" target="_blank" class="btn btn-outline">
+                Documentation →
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Medium Articles -->
+        <div class="writing-item">
+          <div class="writing-icon">✍️</div>
+          <div class="writing-content">
+            <h3>Medium Articles</h3>
+            <p class="writing-meta">Regular publications</p>
+            <p>Exploring systems thinking, data strategy, and organizational effectiveness through thoughtful analysis and practical insights.</p>
+            <a href="https://medium.com/@kyle-t-jones" target="_blank" class="btn btn-outline">
+              Read on Medium →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="newsletter-signup">
+    <div class="container">
+      <h2 class="section-title">Stay Updated</h2>
+      <p>Get notified when I publish new articles on systems thinking and data strategy.</p>
+      <form id="newsletter-form" class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="container">
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="contact-description">
+        Ready to discuss your next strategic challenge? I'm always interested in 
+        connecting with fellow systems thinkers and strategists.
+      </p>
+      
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your project or challenge..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-large">
+          Send Message →
+        </button>
+      </form>
+      
+      <div class="contact-alternative">
+        <p style="margin-top: 2rem; opacity: 0.8;">Or email me directly at:</p>
+        <a href="mailto:kyle@kyletjones.com" style="color: white; font-weight: 500;">kyle@kyletjones.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Kyle T. Jones. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
