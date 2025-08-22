@@ -5,6 +5,30 @@
   box-sizing: border-box;
 }
 
+/* Higher contrast adjustments for users who prefer it */
+@media (prefers-contrast: more) {
+  .about-text,
+  .writing-content p,
+  .contact-description {
+    color: #2d3748; /* darker text for better contrast on light bg */
+  }
+
+  body.dark-mode .about-text,
+  body.dark-mode .writing-content p,
+  body.dark-mode .contact-description {
+    color: #e2e8f0; /* lighter text in dark mode */
+  }
+
+  .btn-outline {
+    color: #4c51bf; /* deeper indigo */
+    border-color: #4c51bf;
+  }
+
+  .newsletter-form input[type="email"] {
+    border-color: #4a5568;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -188,6 +212,30 @@ h1, h2, h3 {
   border: 2px solid transparent;
 }
 
+/* Accessible focus styles */
+.btn:focus-visible,
+.btn-outline:focus-visible,
+.footer-links a:focus-visible,
+a.btn:focus-visible,
+.dark-mode-toggle:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #81c784; /* green focus ring for good contrast */
+  outline-offset: 3px;
+}
+
+body.dark-mode .btn:focus-visible,
+body.dark-mode .btn-outline:focus-visible,
+body.dark-mode .footer-links a:focus-visible,
+body.dark-mode a.btn:focus-visible,
+body.dark-mode .dark-mode-toggle:focus-visible,
+body.dark-mode input:focus-visible,
+body.dark-mode textarea:focus-visible,
+body.dark-mode select:focus-visible {
+  outline-color: #81c784;
+}
+
 .btn-primary {
   background: #ffffff;
   color: #667eea;
@@ -324,6 +372,12 @@ h1, h2, h3 {
   color: #4a5568;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+}
+
+/* Ensure focus visibility for any links in cards */
+.writing-item a:focus-visible {
+  outline: 3px solid #81c784;
+  outline-offset: 3px;
 }
 
 /* Book Display */

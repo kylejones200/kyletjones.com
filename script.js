@@ -56,6 +56,102 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
+    // Render Projects dynamically
+    const projectsGrid = document.getElementById('projects-grid');
+    if (projectsGrid) {
+        const projects = [
+            {
+                title: 'Education',
+                url: 'https://kylejones200.github.io/education/',
+                icon: '🎓',
+                meta: 'Personal Project',
+                description: 'Notes, resources, and experiments in learning design.'
+            },
+            {
+                title: 'Our Table',
+                url: 'https://kylejones200.github.io/our_table/',
+                icon: '🍽️',
+                meta: 'Personal Project',
+                description: 'A small project exploring community and conversation prompts.'
+            },
+            {
+                title: 'ML4U',
+                url: 'https://kylejones200.github.io/ml4u/',
+                icon: '🤖',
+                meta: 'Personal Project',
+                description: 'Machine learning resources and utilities for practical use.'
+            },
+            {
+                title: '48 Hours',
+                url: 'https://kylejones200.github.io/48_hours/',
+                icon: '⏱️',
+                meta: 'Personal Project',
+                description: 'Rapid prototyping challenges completed in two days.'
+            },
+            {
+                title: 'real-simple-stats',
+                url: 'https://kylejones200.github.io/real_simple_stats/',
+                icon: '🐍',
+                meta: 'Personal Project',
+                description: 'Companion site for the Python stats package with docs/examples.'
+            },
+            {
+                title: 'pygeomodeling',
+                url: 'https://kylejones200.github.io/pygeomodeling/',
+                icon: '🗺️',
+                meta: 'Personal Project',
+                description: 'Geospatial modeling experiments and utilities in Python.'
+            },
+            {
+                title: 'pydca',
+                url: 'https://kylejones200.github.io/pydca/',
+                icon: '📈',
+                meta: 'Personal Project',
+                description: 'Data-centric analysis tools and notebooks.'
+            }
+        ];
+
+        projects.forEach(p => {
+            const item = document.createElement('div');
+            item.className = 'writing-item';
+
+            const iconDiv = document.createElement('div');
+            iconDiv.className = 'writing-icon';
+            iconDiv.textContent = p.icon;
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'writing-content';
+
+            const h3 = document.createElement('h3');
+            h3.textContent = p.title;
+
+            const meta = document.createElement('p');
+            meta.className = 'writing-meta';
+            meta.textContent = p.meta;
+
+            const desc = document.createElement('p');
+            desc.textContent = p.description;
+
+            const link = document.createElement('a');
+            link.href = p.url;
+            link.target = '_blank';
+            link.className = 'btn btn-outline';
+            link.textContent = 'Open →';
+            link.setAttribute('aria-label', `Open project ${p.title} in a new tab`);
+            link.rel = 'noopener noreferrer';
+
+            contentDiv.appendChild(h3);
+            contentDiv.appendChild(meta);
+            contentDiv.appendChild(desc);
+            contentDiv.appendChild(link);
+
+            item.appendChild(iconDiv);
+            item.appendChild(contentDiv);
+
+            projectsGrid.appendChild(item);
+        });
+    }
+
     // Observe all sections and cards
     const elementsToAnimate = document.querySelectorAll('.section-title, .hero-content, .about-content, .skill-item, .writing-item, .contact-content');
     elementsToAnimate.forEach(el => {
@@ -111,6 +207,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const messageDiv = document.createElement('div');
         messageDiv.className = `form-message form-message-${type}`;
         messageDiv.textContent = message;
+        // Accessibility: announce via screen readers
+        messageDiv.setAttribute('role', 'status');
+        messageDiv.setAttribute('aria-live', 'polite');
+        messageDiv.setAttribute('aria-atomic', 'true');
         
         // Find the form that was submitted
         const activeForm = document.activeElement.closest('form');
@@ -128,24 +228,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroName = document.querySelector('.hero-name');
     if (heroName) {
         const text = heroName.textContent;
-        heroName.textContent = '';
-        heroName.style.borderRight = '2px solid white';
-        
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                heroName.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            } else {
-                // Remove cursor after typing is complete
-                setTimeout(() => {
-                    heroName.style.borderRight = 'none';
-                }, 1000);
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (prefersReduced) {
+            // No animation; render immediately
+            heroName.textContent = text;
+            heroName.style.borderRight = 'none';
+        } else {
+            heroName.textContent = '';
+            heroName.style.borderRight = '2px solid white';
+
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    heroName.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                } else {
+                    // Remove cursor after typing is complete
+                    setTimeout(() => {
+                        heroName.style.borderRight = 'none';
+                    }, 1000);
+                }
             }
+
+            // Start typing animation after a short delay
+            setTimeout(typeWriter, 1000);
         }
-        
-        // Start typing animation after a short delay
-        setTimeout(typeWriter, 1000);
     }
 });

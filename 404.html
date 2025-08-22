@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found • Kyle T. Jones</title>
+  <meta name="robots" content="noindex">
+  <!-- Match site styles and security settings -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests">
+  <style>
+    .not-found { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 4rem 0; }
+    .not-found .content { max-width: 720px; padding: 0 1.5rem; }
+    .not-found h1 { font-size: 4rem; margin-bottom: 1rem; }
+    .not-found p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 2rem; }
+  </style>
+</head>
+<body>
+  <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+    <span class="toggle-icon sun-icon">☀️</span>
+    <span class="toggle-icon moon-icon">🌙</span>
+  </button>
+
+  <section class="not-found">
+    <div class="content">
+      <h1>404</h1>
+      <h2 class="section-title" style="color:#fff;margin-bottom:1rem;">Page Not Found</h2>
+      <p>The page you’re looking for doesn’t exist or may have moved.</p>
+      <div class="hero-cta" style="justify-content:center;">
+        <a href="/" class="btn btn-primary" aria-label="Return to the homepage">Go Home</a>
+        <a href="/#contact" class="btn btn-secondary" aria-label="Contact Kyle T. Jones">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

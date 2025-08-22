@@ -12,6 +12,9 @@
   <meta name="author" content="Kyle T. Jones">
   <meta name="robots" content="index, follow">
   
+  <!-- Security: Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests">
+  
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kyletjones.com/">
@@ -93,8 +96,8 @@
           data-driven insights, and clear communication.
         </p>
         <div class="hero-cta">
-          <a href="#about" class="btn btn-primary">Learn More</a>
-          <a href="mailto:kyle@kyletjones.com" class="btn btn-secondary">Get In Touch</a>
+          <a href="#about" class="btn btn-primary" aria-label="Learn more about Kyle T. Jones in the About section">Learn More</a>
+          <a href="mailto:kyle@kyletjones.com" class="btn btn-secondary" aria-label="Email Kyle T. Jones at kyle@kyletjones.com">Get In Touch</a>
         </div>
       </div>
     </div>
@@ -129,7 +132,7 @@
   </section>
 
   <!-- Writing Section -->
-  <section class="writing">
+  <section id="writing" class="writing">
     <div class="container">
       <h2 class="section-title">Writing</h2>
       <p class="writing-description">
@@ -152,7 +155,7 @@
             <h3>Hands-On AWS CDK</h3>
             <p class="writing-meta">Co-authored with Sam Ward Biddle • O'Reilly Media</p>
             <p>A comprehensive guide to infrastructure as code using AWS Cloud Development Kit.</p>
-            <a href="https://www.oreilly.com/library/view/hands-on-aws-cdk/9781098158767/" target="_blank" class="btn btn-outline">
+            <a href="https://www.oreilly.com/library/view/hands-on-aws-cdk/9781098158767/" target="_blank" rel="noopener noreferrer" aria-label="View Hands-On AWS CDK on O'Reilly in a new tab" class="btn btn-outline">
               View on O'Reilly →
             </a>
           </div>
@@ -166,10 +169,10 @@
             <p class="writing-meta">Open Source Python Package • PyPI</p>
             <p>A comprehensive Python implementation of statistics covering basic through advanced topics, written as callable modules for education and quick reference.</p>
             <div class="project-links">
-              <a href="https://pypi.org/project/real-simple-stats/" target="_blank" class="btn btn-outline">
+              <a href="https://pypi.org/project/real-simple-stats/" target="_blank" rel="noopener noreferrer" aria-label="View real-simple-stats on PyPI in a new tab" class="btn btn-outline">
                 View on PyPI →
               </a>
-              <a href="https://real-simple-stats.readthedocs.io/en/latest/" target="_blank" class="btn btn-outline">
+              <a href="https://real-simple-stats.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer" aria-label="Open real-simple-stats documentation in a new tab" class="btn btn-outline">
                 Documentation →
               </a>
             </div>
@@ -183,12 +186,23 @@
             <h3>Medium Articles</h3>
             <p class="writing-meta">Regular publications</p>
             <p>Exploring systems thinking, data strategy, and organizational effectiveness through thoughtful analysis and practical insights.</p>
-            <a href="https://medium.com/@kyle-t-jones" target="_blank" class="btn btn-outline">
+            <a href="https://medium.com/@kyle-t-jones" target="_blank" rel="noopener noreferrer" aria-label="Read Medium articles by Kyle T. Jones in a new tab" class="btn btn-outline">
               Read on Medium →
             </a>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="writing-description">
+        Selected personal projects. Built for learning, sharing, and utility.
+      </p>
+      <div id="projects-grid" class="writing-grid"></div>
     </div>
   </section>
 
@@ -205,7 +219,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="contact">
+  <section id="contact" class="contact">
     <div class="container">
       <h2 class="section-title">Let's Connect</h2>
       <p class="contact-description">
@@ -244,8 +258,8 @@
       <div class="footer-content">
         <p>&copy; 2025 Kyle T. Jones. All rights reserved.</p>
         <div class="footer-links">
-          <a href="https://linkedin.com/in/kyle-t-jones" target="_blank">LinkedIn</a>
-          <a href="https://medium.com/@kyle-t-jones" target="_blank">Medium</a>
+          <a href="https://linkedin.com/in/kyle-t-jones" target="_blank" rel="noopener noreferrer" aria-label="Open Kyle T. Jones on LinkedIn in a new tab">LinkedIn</a>
+          <a href="https://medium.com/@kyle-t-jones" target="_blank" rel="noopener noreferrer" aria-label="Open Kyle T. Jones on Medium in a new tab">Medium</a>
           <a href="mailto:kyle@kyletjones.com">Email</a>
         </div>
       </div>
