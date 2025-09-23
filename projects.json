@@ -1,0 +1,79 @@
+[
+  {
+    "title": "Education",
+    "url": "https://kylejones200.github.io/education/",
+    "icon": "🎓",
+    "meta": "Personal Project",
+    "description": "Notes, resources, and experiments in learning design."
+  },
+  {
+    "title": "Our Table",
+    "url": "https://kylejones200.github.io/our_table/",
+    "icon": "🍽️",
+    "meta": "Personal Project",
+    "description": "A small project exploring community and conversation prompts."
+  },
+  {
+    "title": "ML4U",
+    "url": "https://kylejones200.github.io/ml4u/",
+    "icon": "🤖",
+    "meta": "Personal Project",
+    "description": "Machine learning resources and utilities for practical use."
+  },
+  {
+    "title": "48 Hours",
+    "url": "https://kylejones200.github.io/48_hours/",
+    "icon": "⏱️",
+    "meta": "Personal Project",
+    "description": "Rapid prototyping challenges completed in two days."
+  },
+  {
+    "title": "real-simple-stats",
+    "url": "https://kylejones200.github.io/real_simple_stats/",
+    "icon": "🐍",
+    "meta": "Open Source",
+    "description": "Companion site for the Python stats package with docs/examples."
+  },
+  {
+    "title": "pygeomodeling (GitHub)",
+    "url": "https://github.com/kylejones200/pygeomodeling",
+    "icon": "🗺️",
+    "meta": "Open Source",
+    "description": "Geospatial modeling experiments and utilities in Python (repository)."
+  },
+  {
+    "title": "pygeomodeling (Docs)",
+    "url": "https://kylejones200.github.io/pygeomodeling/",
+    "icon": "🗺️",
+    "meta": "Open Source",
+    "description": "Geospatial modeling experiments and utilities in Python (documentation)."
+  },
+  {
+    "title": "pydca",
+    "url": "https://kylejones200.github.io/pydca/",
+    "icon": "📈",
+    "meta": "Open Source",
+    "description": "Data-centric analysis tools and notebooks."
+  },
+  {
+    "title": "PM Simulation",
+    "url": "https://kylejones200.github.io/pm_simulation/",
+    "icon": "🧩",
+    "meta": "Personal Project",
+    "description": "Interactive simulation for project management scenarios."
+  },
+  {
+    "title": "PM Earned Value",
+    "url": "https://kylejones200.github.io/pm_earned_value/",
+    "icon": "📊",
+    "meta": "Personal Project",
+    "description": "Tools and visualizations for earned value management."
+  },
+  {
+    "title": "pydca (GitHub)",
+    "url": "https://github.com/kylejones200/pydca",
+    "icon": "📈",
+    "meta": "Open Source",
+    "description": "pydca source repository on GitHub."
+  }
+]

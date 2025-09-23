@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Render Projects dynamically
     const projectsGrid = document.getElementById('projects-grid');
     if (projectsGrid) {
-        const projects = [
+        // Fallback list (used if projects.json fails to load)
+        const fallbackProjects = [
             {
                 title: 'Education',
                 url: 'https://kylejones200.github.io/education/',
@@ -92,64 +93,105 @@ document.addEventListener('DOMContentLoaded', function() {
                 title: 'real-simple-stats',
                 url: 'https://kylejones200.github.io/real_simple_stats/',
                 icon: '🐍',
-                meta: 'Personal Project',
+                meta: 'Open Source',
                 description: 'Companion site for the Python stats package with docs/examples.'
             },
             {
-                title: 'pygeomodeling',
+                title: 'pygeomodeling (GitHub)',
+                url: 'https://github.com/kylejones200/pygeomodeling',
+                icon: '🗺️',
+                meta: 'Open Source',
+                description: 'Geospatial modeling experiments and utilities in Python (repository).'
+            },
+            {
+                title: 'pygeomodeling (Docs)',
                 url: 'https://kylejones200.github.io/pygeomodeling/',
                 icon: '🗺️',
-                meta: 'Personal Project',
-                description: 'Geospatial modeling experiments and utilities in Python.'
+                meta: 'Open Source',
+                description: 'Geospatial modeling experiments and utilities in Python (documentation).'
             },
             {
                 title: 'pydca',
                 url: 'https://kylejones200.github.io/pydca/',
                 icon: '📈',
-                meta: 'Personal Project',
+                meta: 'Open Source',
                 description: 'Data-centric analysis tools and notebooks.'
+            },
+            {
+                title: 'PM Simulation',
+                url: 'https://kylejones200.github.io/pm_simulation/',
+                icon: '🧩',
+                meta: 'Personal Project',
+                description: 'Interactive simulation for project management scenarios.'
+            },
+            {
+                title: 'PM Earned Value',
+                url: 'https://kylejones200.github.io/pm_earned_value/',
+                icon: '📊',
+                meta: 'Personal Project',
+                description: 'Tools and visualizations for earned value management.'
             }
         ];
 
-        projects.forEach(p => {
-            const item = document.createElement('div');
-            item.className = 'writing-item';
+        function renderProjects(projects) {
+            projectsGrid.innerHTML = '';
+            projects.forEach(p => {
+                const item = document.createElement('div');
+                item.className = 'writing-item';
 
-            const iconDiv = document.createElement('div');
-            iconDiv.className = 'writing-icon';
-            iconDiv.textContent = p.icon;
+                const iconDiv = document.createElement('div');
+                iconDiv.className = 'writing-icon';
+                iconDiv.textContent = p.icon || '📦';
 
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'writing-content';
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'writing-content';
 
-            const h3 = document.createElement('h3');
-            h3.textContent = p.title;
+                const h3 = document.createElement('h3');
+                h3.textContent = p.title || 'Untitled Project';
 
-            const meta = document.createElement('p');
-            meta.className = 'writing-meta';
-            meta.textContent = p.meta;
+                const meta = document.createElement('p');
+                meta.className = 'writing-meta';
+                meta.textContent = p.meta || '';
 
-            const desc = document.createElement('p');
-            desc.textContent = p.description;
+                const desc = document.createElement('p');
+                desc.textContent = p.description || '';
 
-            const link = document.createElement('a');
-            link.href = p.url;
-            link.target = '_blank';
-            link.className = 'btn btn-outline';
-            link.textContent = 'Open →';
-            link.setAttribute('aria-label', `Open project ${p.title} in a new tab`);
-            link.rel = 'noopener noreferrer';
+                const link = document.createElement('a');
+                link.href = p.url;
+                link.target = '_blank';
+                link.className = 'btn btn-outline';
+                link.textContent = 'Open →';
+                link.setAttribute('aria-label', `Open project ${p.title} in a new tab`);
+                link.rel = 'noopener noreferrer';
 
-            contentDiv.appendChild(h3);
-            contentDiv.appendChild(meta);
-            contentDiv.appendChild(desc);
-            contentDiv.appendChild(link);
+                contentDiv.appendChild(h3);
+                if (meta.textContent) contentDiv.appendChild(meta);
+                if (desc.textContent) contentDiv.appendChild(desc);
+                contentDiv.appendChild(link);
 
-            item.appendChild(iconDiv);
-            item.appendChild(contentDiv);
+                item.appendChild(iconDiv);
+                item.appendChild(contentDiv);
 
-            projectsGrid.appendChild(item);
-        });
+                projectsGrid.appendChild(item);
+            });
+        }
+
+        // Try to load from projects.json; fallback to hardcoded list on error
+        fetch('projects.json', { cache: 'no-store' })
+            .then(res => {
+                if (!res.ok) throw new Error(`Failed to load projects.json (${res.status})`);
+                return res.json();
+            })
+            .then(data => {
+                if (Array.isArray(data) && data.length) {
+                    renderProjects(data);
+                } else {
+                    renderProjects(fallbackProjects);
+                }
+            })
+            .catch(() => {
+                renderProjects(fallbackProjects);
+            });
     }
 
     // Observe all sections and cards
