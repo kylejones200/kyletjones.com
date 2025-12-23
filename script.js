@@ -156,18 +156,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 const desc = document.createElement('p');
                 desc.textContent = p.description || '';
 
-                const link = document.createElement('a');
-                link.href = p.url;
-                link.target = '_blank';
-                link.className = 'btn btn-outline';
-                link.textContent = 'Open →';
-                link.setAttribute('aria-label', `Open project ${p.title} in a new tab`);
-                link.rel = 'noopener noreferrer';
+                // Handle both new nested URLs format and old single URL format (backwards compatibility)
+                let links = [];
+                if (p.urls) {
+                    // New format: nested URLs object
+                    if (p.urls.github) {
+                        links.push({ url: p.urls.github, label: 'GitHub →', type: 'github' });
+                    }
+                    if (p.urls.pypi) {
+                        links.push({ url: p.urls.pypi, label: 'PyPI →', type: 'pypi' });
+                    }
+                    if (p.urls.docs) {
+                        links.push({ url: p.urls.docs, label: 'Docs →', type: 'docs' });
+                    }
+                } else if (p.url) {
+                    // Old format: single URL (backwards compatibility)
+                    links.push({ url: p.url, label: 'Open →', type: 'link' });
+                }
+
+                // Create links container
+                const linksContainer = document.createElement('div');
+                if (links.length > 1) {
+                    linksContainer.className = 'project-links';
+                }
+
+                links.forEach(linkData => {
+                    const link = document.createElement('a');
+                    link.href = linkData.url;
+                    link.target = '_blank';
+                    link.className = 'btn btn-outline';
+                    link.textContent = linkData.label;
+                    link.setAttribute('aria-label', `Open ${linkData.type} for ${p.title} in a new tab`);
+                    link.rel = 'noopener noreferrer';
+                    linksContainer.appendChild(link);
+                });
 
                 contentDiv.appendChild(h3);
                 if (meta.textContent) contentDiv.appendChild(meta);
                 if (desc.textContent) contentDiv.appendChild(desc);
-                contentDiv.appendChild(link);
+                if (links.length > 0) {
+                    contentDiv.appendChild(linksContainer);
+                }
 
                 item.appendChild(iconDiv);
                 item.appendChild(contentDiv);

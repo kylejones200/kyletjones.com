@@ -1,79 +1,149 @@
 [
   {
     "title": "Education",
-    "url": "https://kylejones200.github.io/education/",
+    "urls": {
+      "docs": "https://kylejones200.github.io/education/"
+    },
     "icon": "🎓",
     "meta": "Personal Project",
     "description": "Notes, resources, and experiments in learning design."
   },
   {
     "title": "Our Table",
-    "url": "https://kylejones200.github.io/our_table/",
+    "urls": {
+      "docs": "https://kylejones200.github.io/our_table/"
+    },
     "icon": "🍽️",
     "meta": "Personal Project",
     "description": "A small project exploring community and conversation prompts."
   },
   {
     "title": "ML4U",
-    "url": "https://kylejones200.github.io/ml4u/",
+    "urls": {
+      "docs": "https://kylejones200.github.io/ml4u/"
+    },
     "icon": "🤖",
     "meta": "Personal Project",
     "description": "Machine learning resources and utilities for practical use."
   },
   {
     "title": "48 Hours",
-    "url": "https://kylejones200.github.io/48_hours/",
+    "urls": {
+      "docs": "https://kylejones200.github.io/48_hours/"
+    },
     "icon": "⏱️",
     "meta": "Personal Project",
     "description": "Rapid prototyping challenges completed in two days."
   },
   {
     "title": "real-simple-stats",
-    "url": "https://kylejones200.github.io/real_simple_stats/",
+    "urls": {
+      "pypi": "https://pypi.org/project/real-simple-stats/",
+      "docs": "https://real-simple-stats.readthedocs.io/en/latest/"
+    },
     "icon": "🐍",
     "meta": "Open Source",
     "description": "Companion site for the Python stats package with docs/examples."
   },
   {
-    "title": "pygeomodeling (GitHub)",
-    "url": "https://github.com/kylejones200/pygeomodeling",
-    "icon": "🗺️",
+    "title": "polerisk",
+    "urls": {
+      "github": "https://github.com/kylejones200/polerisk",
+      "pypi": "https://pypi.org/project/polerisk/",
+      "docs": "https://polerisk.readthedocs.io"
+    },
+    "icon": "⚡",
     "meta": "Open Source",
-    "description": "Geospatial modeling experiments and utilities in Python (repository)."
+    "description": "Predictive utility pole failure analysis and maintenance optimization platform."
   },
   {
-    "title": "pygeomodeling (Docs)",
-    "url": "https://kylejones200.github.io/pygeomodeling/",
+    "title": "GeoSuite",
+    "urls": {
+      "github": "https://github.com/kylejones200/geosuite",
+      "pypi": "https://pypi.org/project/geosuite/",
+      "docs": "https://geosuite-python.readthedocs.io/en/latest/"
+    },
+    "icon": "🌍",
+    "meta": "Open Source",
+    "description": "Geoscience workflows in Python across geomechanics, petrophysics, ML, and subsurface data I/O."
+  },
+  {
+    "title": "ts2net",
+    "urls": {
+      "github": "https://github.com/kylejones200/ts2net",
+      "docs": "https://ts2net.readthedocs.io/en/latest/"
+    },
+    "icon": "🕸️",
+    "meta": "Open Source",
+    "description": "Convert time series to networks with visibility graphs, recurrence networks, and transition networks."
+  },
+  {
+    "title": "pygeomodeling",
+    "urls": {
+      "github": "https://github.com/kylejones200/pygeomodeling",
+      "pypi": "https://pypi.org/project/pygeomodeling/",
+      "docs": "https://kylejones200.github.io/pygeomodeling/"
+    },
     "icon": "🗺️",
     "meta": "Open Source",
-    "description": "Geospatial modeling experiments and utilities in Python (documentation)."
+    "description": "Geospatial modeling experiments and utilities in Python."
   },
   {
     "title": "pydca",
-    "url": "https://kylejones200.github.io/pydca/",
+    "urls": {
+      "github": "https://github.com/kylejones200/pydca",
+      "docs": "https://pydca.readthedocs.io/en/latest/"
+    },
     "icon": "📈",
     "meta": "Open Source",
     "description": "Data-centric analysis tools and notebooks."
   },
   {
     "title": "PM Simulation",
-    "url": "https://kylejones200.github.io/pm_simulation/",
+    "urls": {
+      "docs": "https://kylejones200.github.io/pm_simulation/"
+    },
     "icon": "🧩",
     "meta": "Personal Project",
     "description": "Interactive simulation for project management scenarios."
   },
   {
     "title": "PM Earned Value",
-    "url": "https://kylejones200.github.io/pm_earned_value/",
+    "urls": {
+      "docs": "https://kylejones200.github.io/pm_earned_value/"
+    },
     "icon": "📊",
     "meta": "Personal Project",
     "description": "Tools and visualizations for earned value management."
   },
   {
-    "title": "pydca (GitHub)",
-    "url": "https://github.com/kylejones200/pydca",
-    "icon": "📈",
+    "title": "decline-curve",
+    "urls": {
+      "github": "https://github.com/kylejones200/decline-curve",
+      "pypi": "https://pypi.org/project/decline-curve/",
+      "docs": "https://decline-curve.readthedocs.io"
+    },
+    "icon": "📉",
     "meta": "Open Source",
-    "description": "pydca source repository on GitHub."
+    "description": "Decline Curve Analysis: A comprehensive Python library for decline curve analysis with multi-phase forecasting, data utilities, and ML models."
+  },
+  {
+    "title": "signalplot",
+    "urls": {
+      "github": "https://github.com/kylejones200/signalplot",
+      "pypi": "https://pypi.org/project/signalplot/"
+    },
+    "icon": "📡",
+    "meta": "Open Source",
+    "description": "A Python library for signal visualization and analysis."
+  },
+  {
+    "title": "electric_utilities",
+    "urls": {
+      "github": "https://github.com/kylejones200/electric_utilities"
+    },
+    "icon": "⚡",
+    "meta": "Open Source",
+    "description": "Utilities and tools for electric utility data analysis and management."
   }
 ]
