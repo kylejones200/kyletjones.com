@@ -1,0 +1,13 @@
+[
+  {
+    "title": "Example Article",
+    "date": "2025-01-15",
+    "slug": "example-article",
+    "description": "This is an example article to demonstrate the articles system",
+    "type": "posts",
+    "path": "content/posts/2025-01-15-example-article.md",
+    "filename": "2025-01-15-example-article.md",
+    "publish": true
+  }
+]
+

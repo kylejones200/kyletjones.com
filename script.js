@@ -223,8 +223,98 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
+    // Render Articles dynamically
+    const articlesGrid = document.getElementById('articles-grid');
+    if (articlesGrid) {
+        function renderArticles(articles) {
+            articlesGrid.innerHTML = '';
+            
+            if (!articles || articles.length === 0) {
+                articlesGrid.innerHTML = '<p style="text-align: center; opacity: 0.7;">No articles yet. Check back soon!</p>';
+                return;
+            }
+
+            // Filter only published articles (publish: true)
+            const publishedArticles = articles.filter(article => article.publish === true || article.publish === 'true');
+
+            if (publishedArticles.length === 0) {
+                articlesGrid.innerHTML = '<p style="text-align: center; opacity: 0.7;">No articles yet. Check back soon!</p>';
+                return;
+            }
+
+            // Sort articles by date (newest first)
+            const sortedArticles = [...publishedArticles].sort((a, b) => {
+                const dateA = new Date(a.date || '1970-01-01');
+                const dateB = new Date(b.date || '1970-01-01');
+                return dateB - dateA;
+            });
+
+            sortedArticles.forEach(article => {
+                const item = document.createElement('div');
+                item.className = 'article-item';
+
+                const contentDiv = document.createElement('div');
+                contentDiv.className = 'article-item-content';
+
+                const h3 = document.createElement('h3');
+                h3.textContent = article.title || 'Untitled Article';
+
+                const meta = document.createElement('p');
+                meta.className = 'article-item-meta';
+                
+                const metaParts = [];
+                if (article.date) {
+                    const date = new Date(article.date);
+                    metaParts.push(date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
+                }
+                if (article.type) {
+                    metaParts.push(article.type);
+                }
+                if (article.category) {
+                    metaParts.push(article.category);
+                }
+                meta.textContent = metaParts.join(' • ');
+
+                const desc = document.createElement('p');
+                desc.className = 'article-item-description';
+                desc.textContent = article.description || article.excerpt || '';
+
+                const link = document.createElement('a');
+                link.href = `article.html?slug=${encodeURIComponent(article.slug)}`;
+                link.className = 'btn btn-outline';
+                link.textContent = 'Read Article →';
+                link.setAttribute('aria-label', `Read ${article.title || 'article'}`);
+
+                contentDiv.appendChild(h3);
+                if (meta.textContent) contentDiv.appendChild(meta);
+                if (desc.textContent) contentDiv.appendChild(desc);
+                contentDiv.appendChild(link);
+
+                item.appendChild(contentDiv);
+                articlesGrid.appendChild(item);
+            });
+        }
+
+        // Load articles from articles.json
+        fetch('articles.json', { cache: 'no-store' })
+            .then(res => {
+                if (!res.ok) throw new Error(`Failed to load articles.json (${res.status})`);
+                return res.json();
+            })
+            .then(data => {
+                if (Array.isArray(data)) {
+                    renderArticles(data);
+                } else {
+                    renderArticles([]);
+                }
+            })
+            .catch(() => {
+                renderArticles([]);
+            });
+    }
+
     // Observe all sections and cards
-    const elementsToAnimate = document.querySelectorAll('.section-title, .hero-content, .about-content, .skill-item, .writing-item, .contact-content');
+    const elementsToAnimate = document.querySelectorAll('.section-title, .hero-content, .about-content, .skill-item, .writing-item, .article-item, .contact-content');
     elementsToAnimate.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);

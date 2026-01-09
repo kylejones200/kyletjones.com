@@ -13,7 +13,7 @@
   <meta name="robots" content="index, follow">
   
   <!-- Security: Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -194,6 +194,18 @@
       </div>
     </div>
   </section>
+
+  <!-- Articles Section -->
+  <section id="articles" class="articles">
+    <div class="container">
+      <h2 class="section-title">Articles</h2>
+      <p class="writing-description">
+        Thoughts on systems thinking, data strategy, and organizational effectiveness. 
+        Written in plain text, shared with clarity.
+      </p>
+      <div id="articles-grid" class="articles-grid"></div>
+    </div>
+  </section>
   
   <!-- Projects Section -->
   <section id="projects" class="projects">
@@ -266,6 +278,8 @@
     </div>
   </footer>
 
+  <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

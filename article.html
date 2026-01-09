@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title id="article-title">Article - Kyle T. Jones</title>
+  <meta name="title" id="meta-title" content="Article - Kyle T. Jones">
+  <meta name="description" id="meta-description" content="Article by Kyle T. Jones">
+  <meta name="author" content="Kyle T. Jones">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Security: Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; base-uri 'self'; form-action 'self' mailto:; frame-ancestors 'none'; upgrade-insecure-requests">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" id="og-url" content="https://kyletjones.com/article.html">
+  <meta property="og:title" id="og-title" content="Article - Kyle T. Jones">
+  <meta property="og:description" id="og-description" content="Article by Kyle T. Jones">
+  <meta property="og:site_name" content="Kyle T. Jones">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" id="twitter-url" content="https://kyletjones.com/article.html">
+  <meta property="twitter:title" id="twitter-title" content="Article - Kyle T. Jones">
+  <meta property="twitter:description" id="twitter-description" content="Article by Kyle T. Jones">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
+    <span class="toggle-icon sun-icon">☀️</span>
+    <span class="toggle-icon moon-icon">🌙</span>
+  </button>
+
+  <!-- Article Header -->
+  <header class="article-header">
+    <div class="container">
+      <nav class="article-nav">
+        <a href="index.html" class="btn btn-outline">← Back to Home</a>
+      </nav>
+      <div id="article-meta" class="article-meta"></div>
+      <h1 id="article-heading" class="article-heading"></h1>
+    </div>
+  </header>
+
+  <!-- Article Content -->
+  <article class="article-content">
+    <div class="container">
+      <div id="article-body" class="article-body"></div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Kyle T. Jones. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="https://linkedin.com/in/kyle-t-jones" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://medium.com/@kyle-t-jones" target="_blank" rel="noopener noreferrer">Medium</a>
+          <a href="mailto:kyle@kyletjones.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="article.js"></script>
+</body>
+</html>
+

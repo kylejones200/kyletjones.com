@@ -57,46 +57,26 @@
     "description": "Predictive utility pole failure analysis and maintenance optimization platform."
   },
   {
-    "title": "GeoSuite",
+    "title": "geosmith",
     "urls": {
-      "github": "https://github.com/kylejones200/geosuite",
-      "pypi": "https://pypi.org/project/geosuite/",
-      "docs": "https://geosuite-python.readthedocs.io/en/latest/"
+      "github": "https://github.com/kylejones200/geosmith",
+      "pypi": "https://pypi.org/project/geosmith/",
+      "docs": "https://geosmith.readthedocs.io"
     },
     "icon": "🌍",
     "meta": "Open Source",
     "description": "Geoscience workflows in Python across geomechanics, petrophysics, ML, and subsurface data I/O."
   },
   {
-    "title": "ts2net",
+    "title": "timesmith",
     "urls": {
-      "github": "https://github.com/kylejones200/ts2net",
-      "docs": "https://ts2net.readthedocs.io/en/latest/"
+      "github": "https://github.com/kylejones200/timesmith",
+      "pypi": "https://pypi.org/project/timesmith/",
+      "docs": "https://timesmith.readthedocs.io"
     },
-    "icon": "🕸️",
+    "icon": "⏱️",
     "meta": "Open Source",
-    "description": "Convert time series to networks with visibility graphs, recurrence networks, and transition networks."
-  },
-  {
-    "title": "pygeomodeling",
-    "urls": {
-      "github": "https://github.com/kylejones200/pygeomodeling",
-      "pypi": "https://pypi.org/project/pygeomodeling/",
-      "docs": "https://kylejones200.github.io/pygeomodeling/"
-    },
-    "icon": "🗺️",
-    "meta": "Open Source",
-    "description": "Geospatial modeling experiments and utilities in Python."
-  },
-  {
-    "title": "pydca",
-    "urls": {
-      "github": "https://github.com/kylejones200/pydca",
-      "docs": "https://pydca.readthedocs.io/en/latest/"
-    },
-    "icon": "📈",
-    "meta": "Open Source",
-    "description": "Data-centric analysis tools and notebooks."
+    "description": "Time series analysis and conversion tools with network representations and advanced transformations."
   },
   {
     "title": "PM Simulation",
@@ -117,25 +97,37 @@
     "description": "Tools and visualizations for earned value management."
   },
   {
-    "title": "decline-curve",
+    "title": "ressmith",
     "urls": {
-      "github": "https://github.com/kylejones200/decline-curve",
-      "pypi": "https://pypi.org/project/decline-curve/",
-      "docs": "https://decline-curve.readthedocs.io"
+      "github": "https://github.com/kylejones200/ressmith",
+      "pypi": "https://pypi.org/project/ressmith/",
+      "docs": "https://ressmith.readthedocs.io"
     },
-    "icon": "📉",
+    "icon": "📈",
     "meta": "Open Source",
-    "description": "Decline Curve Analysis: A comprehensive Python library for decline curve analysis with multi-phase forecasting, data utilities, and ML models."
+    "description": "Reservoir analysis and decline curve analysis with multi-phase forecasting, data utilities, and ML models."
   },
   {
-    "title": "signalplot",
+    "title": "plotsmith",
     "urls": {
-      "github": "https://github.com/kylejones200/signalplot",
-      "pypi": "https://pypi.org/project/signalplot/"
+      "github": "https://github.com/kylejones200/plotsmith",
+      "pypi": "https://pypi.org/project/plotsmith/",
+      "docs": "https://plotsmith.readthedocs.io"
     },
-    "icon": "📡",
+    "icon": "📊",
     "meta": "Open Source",
-    "description": "A Python library for signal visualization and analysis."
+    "description": "Signal visualization and analysis library for Python with advanced plotting capabilities."
+  },
+  {
+    "title": "anomsmith",
+    "urls": {
+      "github": "https://github.com/kylejones200/anomsmith",
+      "pypi": "https://pypi.org/project/anomsmith/",
+      "docs": "https://anomsmith.readthedocs.io"
+    },
+    "icon": "🔍",
+    "meta": "Open Source",
+    "description": "Anomaly detection and analysis tools for identifying outliers and unusual patterns in data."
   },
   {
     "title": "electric_utilities",
