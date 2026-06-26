@@ -223,6 +223,92 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
+    // Render Videos (Systems I've Built) dynamically
+    const videosGrid = document.getElementById('videos-grid');
+    if (videosGrid) {
+        const channelUrl = 'https://www.youtube.com/user/kyletjones3/videos';
+
+        const fallbackVideos = [
+            {
+                title: 'Wind Turbine Predictive Maintenance on Databricks',
+                label: 'Cloud data platform demo for time-series analytics, reliability workflows, and applied machine learning.',
+                url: 'https://www.youtube.com/watch?v=qVax9iP24r8',
+                thumbnail: 'https://i.ytimg.com/vi/qVax9iP24r8/hqdefault.jpg'
+            },
+            {
+                title: 'Predictive Maintenance App',
+                label: 'Industrial AI demo for asset monitoring, operational signals, and maintenance decisions.',
+                url: channelUrl
+            },
+            {
+                title: 'Crude Assay Project',
+                label: 'Energy data product demo for crude characterization, refinery context, and decision support.',
+                url: channelUrl
+            }
+        ];
+
+        function renderVideos(videos) {
+            videosGrid.innerHTML = '';
+            videos.forEach(v => {
+                const card = document.createElement('a');
+                card.className = 'video-card';
+                card.href = v.url || channelUrl;
+                card.target = '_blank';
+                card.rel = 'noopener noreferrer';
+                card.setAttribute('aria-label', `Watch ${v.title || 'demo'} on YouTube in a new tab`);
+
+                const thumb = document.createElement('div');
+                thumb.className = 'video-thumb';
+                if (v.thumbnail) {
+                    const img = document.createElement('img');
+                    img.src = v.thumbnail;
+                    img.alt = '';
+                    img.loading = 'lazy';
+                    thumb.appendChild(img);
+                } else {
+                    thumb.classList.add('video-thumb-placeholder');
+                }
+                const play = document.createElement('span');
+                play.className = 'video-play';
+                play.setAttribute('aria-hidden', 'true');
+                play.textContent = '▶';
+                thumb.appendChild(play);
+
+                const content = document.createElement('div');
+                content.className = 'video-content';
+
+                const h3 = document.createElement('h3');
+                h3.textContent = v.title || 'Untitled Demo';
+
+                const label = document.createElement('p');
+                label.textContent = v.label || '';
+
+                content.appendChild(h3);
+                if (label.textContent) content.appendChild(label);
+
+                card.appendChild(thumb);
+                card.appendChild(content);
+                videosGrid.appendChild(card);
+            });
+        }
+
+        fetch('videos.json', { cache: 'no-store' })
+            .then(res => {
+                if (!res.ok) throw new Error(`Failed to load videos.json (${res.status})`);
+                return res.json();
+            })
+            .then(data => {
+                if (Array.isArray(data) && data.length) {
+                    renderVideos(data);
+                } else {
+                    renderVideos(fallbackVideos);
+                }
+            })
+            .catch(() => {
+                renderVideos(fallbackVideos);
+            });
+    }
+
     // Render Articles dynamically
     const articlesGrid = document.getElementById('articles-grid');
     if (articlesGrid) {
@@ -314,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Observe all sections and cards
-    const elementsToAnimate = document.querySelectorAll('.section-title, .hero-content, .about-content, .skill-item, .writing-item, .article-item, .contact-content');
+    const elementsToAnimate = document.querySelectorAll('.section-title, .hero-content, .about-content, .skill-item, .writing-item, .article-item, .video-card, .domain-chips, .proof-bar, .contact-content');
     elementsToAnimate.forEach(el => {
         el.classList.add('fade-in');
         observer.observe(el);

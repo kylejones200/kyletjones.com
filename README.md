@@ -1,18 +1,20 @@
 # Kyle T. Jones
 
-Systems thinker, author, and data strategist helping organizations navigate complexity through strategic thinking, data-driven insights, and clear communication.
+Product executive, energy data strategist, and hands-on AI systems builder. I build data and AI products for complex technical domains — across energy, cloud platforms, and decision systems.
 
-## About
+## What I Do
 
-I'm passionate about understanding how complex systems work and helping others navigate them effectively. My work sits at the intersection of strategic thinking, data analysis, and clear communication.
+I build products for complex technical domains. My work connects executive strategy, energy data, cloud architecture, and applied AI. I lead at the executive level, reason from the domain, and still write the code when the system needs to exist before anyone believes in it.
 
 ## Work
 
-**Co-author of [Hands-On AWS CDK](https://www.oreilly.com/library/view/hands-on-aws-cdk/9781098158767/)** — A comprehensive guide to infrastructure as code using AWS Cloud Development Kit, published by O'Reilly Media.
+**Author of [Hands-On AWS CDK](https://www.oreilly.com/library/view/hands-on-aws-cdk/9781098158767/)** — A practical guide to cloud-native applications and infrastructure as code, co-authored with Sam Ward Biddle and published by O'Reilly Media.
 
-**Open Source Contributor** — I maintain several Python packages for data analysis, geoscience workflows, and utility infrastructure management, available on PyPI.
+**Systems Builder** — Working prototypes and demos across energy data, industrial AI, and predictive maintenance, published on [YouTube](https://www.youtube.com/user/kyletjones3).
 
-**Writer** — I regularly publish articles on [Medium](https://medium.com/@kyle-t-jones) exploring systems thinking, data strategy, and organizational effectiveness.
+**Open Source** — I maintain a portfolio of Python packages for geoscience, reservoir engineering, time-series, anomaly detection, and infrastructure risk, available on PyPI.
+
+**Writer** — 400+ technical essays on [Medium](https://medium.com/@kyle-t-jones) spanning energy data, applied AI, cloud architecture, and product strategy.
 
 ## Contact
 
