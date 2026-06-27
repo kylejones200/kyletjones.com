@@ -989,6 +989,223 @@ body.dark-mode .moon-icon {
   border: 1px solid rgba(245, 101, 101, 0.3);
 }
 
+/* Hero thesis line */
+.hero-thesis {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin: 0 auto 2.5rem;
+  max-width: 640px;
+  opacity: 0.95;
+}
+
+/* Proof Bar */
+.proof-bar {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 2.5rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.proof-bar li {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+.proof-bar strong {
+  color: #667eea;
+  font-weight: 600;
+}
+
+body.dark-mode .proof-bar {
+  border-color: #2d3748;
+}
+
+body.dark-mode .proof-bar li {
+  color: #a0aec0;
+}
+
+body.dark-mode .proof-bar strong {
+  color: #81c784;
+}
+
+/* Domains Section */
+.domains {
+  padding: 6rem 0;
+  background: #ffffff;
+  text-align: center;
+}
+
+body.dark-mode .domains {
+  background: #0f0f0f;
+}
+
+.domain-chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.domain-chips li {
+  background: #f8f9fa;
+  border: 1px solid #e2e8f0;
+  color: #2d3748;
+  padding: 0.6rem 1.25rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.domain-chips li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .domain-chips li {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+/* Systems I've Built (Builder's Lab) */
+.systems {
+  padding: 6rem 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+body.dark-mode .systems {
+  background: #1a1a1a;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+}
+
+body.dark-mode .video-card {
+  background: #2d3748;
+}
+
+.video-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-thumb-placeholder {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.video-card:hover .video-play {
+  background: #667eea;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-content {
+  padding: 1.5rem;
+}
+
+.video-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+body.dark-mode .video-content h3 {
+  color: #f7fafc;
+}
+
+.video-content p {
+  color: #4a5568;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+body.dark-mode .video-content p {
+  color: #a0aec0;
+}
+
+.video-card:focus-visible {
+  outline: 3px solid #81c784;
+  outline-offset: 3px;
+}
+
+.systems-cta {
+  margin-top: 3rem;
+}
+
+/* Newsletter lead (demoted) */
+.newsletter-lead {
+  max-width: 520px;
+  margin: 0 auto 1.5rem;
+  color: #4a5568;
+}
+
+body.dark-mode .newsletter-lead {
+  color: #a0aec0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
@@ -1072,8 +1289,12 @@ body.dark-mode .moon-icon {
     font-size: 1.8rem;
   }
   
-  .about, .writing, .articles, .contact {
+  .about, .writing, .articles, .contact, .domains, .systems {
     padding: 4rem 0;
+  }
+
+  .hero-thesis {
+    font-size: 1.15rem;
   }
   
   .writing-grid,
