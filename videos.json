@@ -4,15 +4,5 @@
     "label": "Cloud data platform demo for time-series analytics, reliability workflows, and applied machine learning.",
     "url": "https://www.youtube.com/watch?v=qVax9iP24r8",
     "thumbnail": "https://i.ytimg.com/vi/qVax9iP24r8/hqdefault.jpg"
-  },
-  {
-    "title": "Predictive Maintenance App",
-    "label": "Industrial AI demo for asset monitoring, operational signals, and maintenance decisions.",
-    "url": "https://www.youtube.com/user/kyletjones3/videos"
-  },
-  {
-    "title": "Crude Assay Project",
-    "label": "Energy data product demo for crude characterization, refinery context, and decision support.",
-    "url": "https://www.youtube.com/user/kyletjones3/videos"
   }
 ]

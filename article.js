@@ -1,28 +1,5 @@
-// Dark Mode Toggle (same as main script)
-function initDarkMode() {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-    
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode === 'enabled') {
-        body.classList.add('dark-mode');
-    }
-    
-    darkModeToggle.addEventListener('click', function() {
-        body.classList.toggle('dark-mode');
-        
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-        }
-    });
-}
-
 // Load and render article
 document.addEventListener('DOMContentLoaded', function() {
-    initDarkMode();
-
     // Get slug from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get('slug');

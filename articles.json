@@ -1,13 +1,92 @@
 [
   {
-    "title": "Example Article",
-    "date": "2025-01-15",
-    "slug": "example-article",
-    "description": "This is an example article to demonstrate the articles system",
-    "type": "posts",
-    "path": "content/posts/2025-01-15-example-article.md",
-    "filename": "2025-01-15-example-article.md",
+    "title": "The Five Levels of Decision Quality",
+    "date": "2026-06-27",
+    "url": "https://medium.com/@kyle-t-jones/the-five-levels-of-decision-quality-02fc20e29f53",
+    "category": "Business Strategy",
+    "description": "Most teams evaluate decisions by outcome. The product succeeded or it failed. The feature shipped or it did not. The customer signed or they walked. Outcome-based…",
+    "source": "Medium",
+    "publish": true
+  },
+  {
+    "title": "Changing Product Strategy based on Bayesian Inference",
+    "date": "2026-06-27",
+    "url": "https://medium.com/@kyle-t-jones/changing-product-strategy-based-on-bayesian-inference-0228b987d2d8",
+    "category": "Decision Making",
+    "description": "Most teams do not fail because their guesses are wrong. They fail because nobody writes down how confident the guesses were. Most product strategy is built on point…",
+    "source": "Medium",
+    "publish": true
+  },
+  {
+    "title": "Reserves Have Two Clocks: How Shell “Lost” 30% of Its Barrels Without Pumping Them",
+    "date": "2026-06-24",
+    "url": "https://medium.com/@kyle-t-jones/reserves-have-two-clocks-how-shell-lost-30-of-its-barrels-without-pumping-them-815c9278e689",
+    "category": "Data Science",
+    "description": "A proved-reserves number is an estimate wearing a fact’s clothing. Here’s what the largest reserves restatement in modern history teaches about bitemporal data — and why…",
+    "source": "Medium",
+    "publish": true
+  },
+  {
+    "title": "Backtesting Without Cheating: Bitemporal Joins, As-Of Correctness, and the Sahm Rule",
+    "date": "2026-06-20",
+    "url": "https://medium.com/@kyle-t-jones/backtesting-without-cheating-bitemporal-joins-as-of-correctness-and-the-sahm-rule-d762f0d4057d",
+    "category": "Data Science",
+    "description": "Most backtest had access to a number it shouldn’t have known. Here’s how that look-ahead bias gets in, how to measure it, and how to build joins that physically cannot…",
+    "source": "Medium",
+    "publish": true
+  },
+  {
+    "title": "The Two Clocks: A Field Guide to Bitemporal Time Series",
+    "date": "2026-06-20",
+    "url": "https://medium.com/@kyle-t-jones/the-two-clocks-a-field-guide-to-bitemporal-time-series-5a5f089e501f",
+    "category": "Oil And Gas",
+    "description": "Why the most-quoted number of the pandemic is already wrong, what that teaches us about data with two clocks, and how to build a time series that never lies about what…",
+    "source": "Medium",
+    "publish": true
+  },
+  {
+    "title": "Building Geology Models with Sparse Data in Python",
+    "date": "2026-06-14",
+    "url": "https://medium.com/@kyle-t-jones/building-geology-models-with-sparse-data-in-python-0068bf695464",
+    "category": "Data Engineering",
+    "description": "In another article, I talked about the stratigraphy tool I built to predict Kansas stratigraphic columns from only three inputs: longitude, latitude, and depth. That…",
+    "source": "Medium",
+    "publish": true
+  },
+  {
+    "title": "A “Click-Anywhere Stratigraphic Column” for Kansas using Public Data and Python",
+    "date": "2026-06-14",
+    "url": "https://medium.com/@kyle-t-jones/a-click-anywhere-stratigraphic-column-for-kansas-using-public-data-and-python-eabaac756fb8",
+    "category": "Decision Making",
+    "description": "What 130K public wells can predict about the subsurface between wellbores Pick any point in Kansas and give me a longitude, latitude, and depth. I can return the most…",
+    "source": "Medium",
+    "publish": true
+  },
+  {
+    "title": "Kriging vs. Gaussian Processes: Using Real Wireline Data for 1,500 Wells",
+    "date": "2026-06-13",
+    "url": "https://medium.com/@kyle-t-jones/kriging-vs-gaussian-processes-using-real-wireline-data-for-1-500-wells-07cc04c78fb0",
+    "category": "Data Science",
+    "description": "A follow-up benchmark — this time on real well data instead of a synthetic reservoir In a previous post , I benchmarked eight spatial interpolation methods — several…",
+    "source": "Medium",
+    "publish": true
+  },
+  {
+    "title": "Kriging vs. Gaussian Processes for Reservoir Modeling: What 1,000x Speed Actually Costs You",
+    "date": "2026-06-13",
+    "url": "https://medium.com/@kyle-t-jones/kriging-vs-gaussian-processes-for-reservoir-modeling-what-1-000x-speed-actually-costs-you-2f84212353c8",
+    "category": "Reservoir Engineering",
+    "description": "If you’ve worked in geostatistics, reservoir modeling, or spatial machine learning, you’ve probably faced this choice: kriging (the classical geostatistics workhorse) or…",
+    "source": "Medium",
+    "publish": true
+  },
+  {
+    "title": "The Phase I ESA: CERCLA Liability and the Bona Fide Prospective Purchaser Defense",
+    "date": "2026-06-06",
+    "url": "https://medium.com/@kyle-t-jones/the-phase-i-esa-cercla-liability-and-the-bona-fide-prospective-purchaser-defense-7fcce176414b",
+    "category": "Data Engineering",
+    "description": "CERCLA holds property owners liable for hazardous substance cleanup costs even when they did not cause the contamination. A buyer who purchases a property with…",
+    "source": "Medium",
     "publish": true
   }
 ]
-

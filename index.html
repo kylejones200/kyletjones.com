@@ -40,7 +40,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
@@ -79,21 +79,13 @@
   </script>
 </head>
 <body>
-  <!-- Dark Mode Toggle -->
-  <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode">
-    <span class="toggle-icon sun-icon">☀️</span>
-    <span class="toggle-icon moon-icon">🌙</span>
-  </button>
-
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1 class="hero-title">
-          <span class="hero-greeting">Hello, I'm</span>
-          <span class="hero-name">Kyle T. Jones</span>
-        </h1>
+        <h1 class="hero-name">Kyle T. Jones</h1>
         <p class="hero-subtitle">Product executive · Energy data strategist · AI systems builder</p>
+        <hr class="hero-rule">
         <p class="hero-description">
           I build data and AI products for complex technical domains — across energy,
           cloud platforms, and decision systems. I lead product strategy at the executive
@@ -102,8 +94,8 @@
         </p>
         <p class="hero-thesis">I turn complex technical domains into products, platforms, and decision systems.</p>
         <div class="hero-cta">
-          <a href="#systems" class="btn btn-primary" aria-label="See systems Kyle T. Jones has built">See What I Build</a>
-          <a href="#contact" class="btn btn-secondary" aria-label="Get in touch with Kyle T. Jones">Work With Me</a>
+          <a href="#systems" class="btn btn-primary" aria-label="See systems Kyle T. Jones has built">See what I build</a>
+          <a href="#contact" class="btn btn-secondary" aria-label="Get in touch with Kyle T. Jones">Work with me</a>
         </div>
       </div>
     </div>
@@ -221,7 +213,6 @@
 
         <!-- Medium Articles -->
         <div class="writing-item">
-          <div class="writing-icon">✍️</div>
           <div class="writing-content">
             <h3>400+ Technical Essays</h3>
             <p class="writing-meta">Published on Medium</p>
@@ -238,12 +229,17 @@
   <!-- Articles Section -->
   <section id="articles" class="articles">
     <div class="container">
-      <h2 class="section-title">Selected Essays</h2>
+      <h2 class="section-title">Recent Writing</h2>
       <p class="writing-description">
-        Long-form pieces on energy data, applied AI, cloud architecture, and product strategy —
-        written in plain text, shared with clarity.
+        A sample of recent essays on energy data, applied AI, decision quality, and product
+        strategy. I write constantly — these are just the latest; hundreds more are on Medium.
       </p>
       <div id="articles-grid" class="articles-grid"></div>
+      <div class="systems-cta">
+        <a href="https://medium.com/@kyle-t-jones" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="Browse the full archive of essays on Medium in a new tab">
+          Browse the full archive on Medium →
+        </a>
+      </div>
     </div>
   </section>
   

@@ -1,31 +1,5 @@
-// Dark Mode Toggle
-function initDarkMode() {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    const body = document.body;
-    
-    // Check for saved dark mode preference or default to light mode
-    const savedMode = localStorage.getItem('darkMode');
-    if (savedMode === 'enabled') {
-        body.classList.add('dark-mode');
-    }
-    
-    // Toggle dark mode
-    darkModeToggle.addEventListener('click', function() {
-        body.classList.toggle('dark-mode');
-        
-        // Save preference
-        if (body.classList.contains('dark-mode')) {
-            localStorage.setItem('darkMode', 'enabled');
-        } else {
-            localStorage.setItem('darkMode', 'disabled');
-        }
-    });
-}
-
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize dark mode
-    initDarkMode();
     // Smooth scroll for anchor links
     const links = document.querySelectorAll('a[href^="#"]');
     links.forEach(link => {
@@ -139,10 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const item = document.createElement('div');
                 item.className = 'writing-item';
 
-                const iconDiv = document.createElement('div');
-                iconDiv.className = 'writing-icon';
-                iconDiv.textContent = p.icon || '📦';
-
                 const contentDiv = document.createElement('div');
                 contentDiv.className = 'writing-content';
 
@@ -198,7 +168,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     contentDiv.appendChild(linksContainer);
                 }
 
-                item.appendChild(iconDiv);
                 item.appendChild(contentDiv);
 
                 projectsGrid.appendChild(item);
@@ -314,17 +283,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (articlesGrid) {
         function renderArticles(articles) {
             articlesGrid.innerHTML = '';
-            
-            if (!articles || articles.length === 0) {
-                articlesGrid.innerHTML = '<p style="text-align: center; opacity: 0.7;">No articles yet. Check back soon!</p>';
-                return;
-            }
 
-            // Filter only published articles (publish: true)
-            const publishedArticles = articles.filter(article => article.publish === true || article.publish === 'true');
+            // Only published articles (publish: true)
+            const publishedArticles = (articles || []).filter(article => article.publish === true || article.publish === 'true');
 
+            // No live essays yet — hide the whole section rather than show a placeholder.
             if (publishedArticles.length === 0) {
-                articlesGrid.innerHTML = '<p style="text-align: center; opacity: 0.7;">No articles yet. Check back soon!</p>';
+                const section = document.getElementById('articles');
+                if (section) section.style.display = 'none';
                 return;
             }
 
@@ -366,10 +332,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 desc.textContent = article.description || article.excerpt || '';
 
                 const link = document.createElement('a');
-                link.href = `article.html?slug=${encodeURIComponent(article.slug)}`;
                 link.className = 'btn btn-outline';
-                link.textContent = 'Read Article →';
-                link.setAttribute('aria-label', `Read ${article.title || 'article'}`);
+                if (article.url) {
+                    // External (e.g. Medium) article — open in a new tab
+                    link.href = article.url;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.textContent = article.source ? `Read on ${article.source} →` : 'Read Article →';
+                    link.setAttribute('aria-label', `Read ${article.title || 'article'}${article.source ? ' on ' + article.source : ''} in a new tab`);
+                } else {
+                    link.href = `article.html?slug=${encodeURIComponent(article.slug)}`;
+                    link.textContent = 'Read Article →';
+                    link.setAttribute('aria-label', `Read ${article.title || 'article'}`);
+                }
 
                 contentDiv.appendChild(h3);
                 if (meta.textContent) contentDiv.appendChild(meta);
@@ -471,36 +446,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Typing animation for hero name
-    const heroName = document.querySelector('.hero-name');
-    if (heroName) {
-        const text = heroName.textContent;
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        if (prefersReduced) {
-            // No animation; render immediately
-            heroName.textContent = text;
-            heroName.style.borderRight = 'none';
-        } else {
-            heroName.textContent = '';
-            heroName.style.borderRight = '2px solid white';
-
-            let i = 0;
-            function typeWriter() {
-                if (i < text.length) {
-                    heroName.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 100);
-                } else {
-                    // Remove cursor after typing is complete
-                    setTimeout(() => {
-                        heroName.style.borderRight = 'none';
-                    }, 1000);
-                }
-            }
-
-            // Start typing animation after a short delay
-            setTimeout(typeWriter, 1000);
-        }
-    }
 });
